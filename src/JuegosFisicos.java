@@ -1,16 +1,15 @@
 public class JuegosFisicos extends Videojuegos {
     int CosteEnvio = 7;
 
-    public JuegosFisicos(String Nombre, Generos Genero, String Consola, double Precio, int CosteEnvio) {
-        super(Nombre, Genero, Consola, Precio);
+    public JuegosFisicos(String Nombre, Generos Genero, Plataforma Consola, int value, int CosteEnvio) {
+        super(Nombre, Genero, Consola, value);
         this.CosteEnvio = CosteEnvio;
+        CalculaPrecio();
     }
+
 
     @Override
-    public double preciofinal() {
-        return getPrecioVideojuego() + CosteEnvio;
+    public void CalculaPrecio() {
+        this.value = value + CosteEnvio;
     }
-
-
-
 }

@@ -4,7 +4,7 @@ public interface IConsole {
 
     void switchOff();
 
-    void installGame(Videojuegos juego);
+    void installGame(Videojuegos juego) throws JuegoNoCompatibleException;
 
     String getPlataforma();
 }

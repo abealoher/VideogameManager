@@ -1,12 +1,17 @@
 public class JuegosDigitales extends Videojuegos {
-    double Descuento = 0.20;
+    int Descuento;
 
-    public JuegosDigitales(String Nombre, Generos Genero, String Consola, double Precio) {
-        super(Nombre, Genero, Consola, Precio);
+
+    public JuegosDigitales(String Nombre, Generos Genero, Plataforma Consola, int value, int descuento) {
+        super(Nombre, Genero, Consola, value);
+        this.Descuento = descuento;
+        CalculaPrecio();
     }
 
+
     @Override
-    public double preciofinal() {
-        return getPrecioVideojuego() - (getPrecioVideojuego() * Descuento);
+    public void CalculaPrecio() {
+        int porcentaje = (value * Descuento) / 100;
+        this.value = value - porcentaje;
     }
 }

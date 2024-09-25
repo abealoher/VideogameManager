@@ -10,14 +10,12 @@ public class VideogameManager {
 
         //Llamada e introducción de los Datos de los juegos digitales
         JuegosDigitales jd1 = new JuegosDigitales(
-                "Rocket League", Generos.Deportes, "PlayStation", 20);
+                "Rocket League", Generos.Deportes, Plataforma.PlayStation, 20, 20);
         String juego1 = jd1.toString();
-        double pf1 = jd1.preciofinal();
         System.out.println(juego1);
 
         //Precio
-        System.out.print("El precio final es: ");
-        System.out.println(pf1 + "€");
+        System.out.printf("El precio final es: %d€%n", jd1.value);
 
         // Separador
         System.out.println("---");
@@ -28,13 +26,11 @@ public class VideogameManager {
 
         //Llamada e introducción de los Datos de los juegos físicos
         JuegosFisicos jf1 = new JuegosFisicos(
-                "Call of Duty", Generos.Accion, "PlayStation", 20, 7);
+                "Call of Duty", Generos.Accion, Plataforma.Xbox, 20, 7);
         String juego2 = jf1.toString();
-        double pf2 = jf1.preciofinal();
         System.out.println(juego2);
 
         //Precio
-        System.out.print("El precio final es: ");
-        System.out.println(pf2 + "€");
+        System.out.printf("El precio final es: %d€", jf1.value);
     }
 }

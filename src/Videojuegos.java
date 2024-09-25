@@ -1,59 +1,30 @@
 import java.util.Objects;
 
-public abstract class Videojuegos {
+public abstract class Videojuegos implements IVideojuego{
 
     private String NombreVideojuego;
     private String GeneroVideojuego;
-    private String ConsolaVideojuego;
-    private double PrecioVideojuego;
+    private String Plataforma;
+    public int value;
+    Plataforma plataforma;
 
-    public Videojuegos(String Nombre, Generos Genero, String Consola, double Precio){
+    public Videojuegos(String Nombre, Generos Genero, Plataforma plataforma, int value){
         this.NombreVideojuego = Nombre;
         this.GeneroVideojuego = Genero.toString();
-        this.ConsolaVideojuego = Consola;
-        this.PrecioVideojuego = Precio;
+        this.Plataforma = plataforma.toString();
+        this.value = value;
     }
-
-    public abstract double preciofinal();
 
     @Override
     public String toString() {
         return "Nombre='" + NombreVideojuego + '\'' +
                 ", Genero='" + GeneroVideojuego + '\'' +
-                ", Consola='" + ConsolaVideojuego + '\'' +
-                ", Precio=" + PrecioVideojuego + '€';
+                ", Consola='" + Plataforma + '\'' +
+                ", Precio=" + value + '€';
     }
 
-    public String getNombreVideojuego() {
-        return NombreVideojuego;
-    }
-
-    public void setNombreVideojuego(String nombreVideojuego) {
-        NombreVideojuego = nombreVideojuego;
-    }
-
-    public String getGeneroVideojuego() {
-        return GeneroVideojuego;
-    }
-
-    public void setGeneroVideojuego(String generoVideojuego) {
-        GeneroVideojuego = generoVideojuego;
-    }
-
-    public String getConsolaVideojuego() {
-        return ConsolaVideojuego;
-    }
-
-    public void setConsolaVideojuego(String consolaVideojuego) {
-        ConsolaVideojuego = consolaVideojuego;
-    }
-
-    public double getPrecioVideojuego() {
-        return PrecioVideojuego;
-    }
-
-    public void setPrecioVideojuego(double precioVideojuego) {
-        PrecioVideojuego = precioVideojuego;
+    public String getPlataforma() {
+        return Plataforma;
     }
 
     @Override
@@ -69,14 +40,14 @@ public abstract class Videojuegos {
             Videojuegos v = (Videojuegos) o;
             testOK = this.NombreVideojuego == v.NombreVideojuego
                     && this.GeneroVideojuego == v.GeneroVideojuego
-                    && this.ConsolaVideojuego == v.ConsolaVideojuego
-                    && this.PrecioVideojuego == v.PrecioVideojuego;
+                    && this.Plataforma == v.Plataforma
+                    && this.value == v.value;
         }
         return testOK;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(NombreVideojuego, GeneroVideojuego, ConsolaVideojuego, PrecioVideojuego);
+        return Objects.hash(NombreVideojuego, GeneroVideojuego, Plataforma, value);
     }
 }
